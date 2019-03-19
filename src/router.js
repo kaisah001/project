@@ -3,7 +3,8 @@ import HomeContainer from './components/tabbar/HomeContainer.vue'
 import MemberContainer from './components/tabbar/MemberContainer.vue'
 import SearchContainer from './components/tabbar/SearchContainer.vue'
 import ShopcarContainer from './components/tabbar/ShopcarContainer.vue'
-
+import Newslist from './components/news/Newslist.vue'
+import Newsinfo from './components/news/Newsinfo.vue'
 
 var router = new VueRouter({
     routes:[
@@ -11,10 +12,13 @@ var router = new VueRouter({
       {path:'/home',component:HomeContainer},
       {path:'/member',component:MemberContainer},
       {path:'/shopcar',component:ShopcarContainer},
-      {path:'/search',component:SearchContainer}
+      {path:'/search',component:SearchContainer},
+      {path:'/home/newslist',component:Newslist},
+      {path:'/home/newsinfo/',component:Newsinfo}
+
     ],
     linkActiveClass:'mui-active'
-})
+}
 
 
 export default router

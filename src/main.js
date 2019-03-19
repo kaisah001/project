@@ -19,7 +19,10 @@ Vue.component(Header.name, Header)
 
 import router from './router.js'
 
+Vue.filter('dateFormat',function(dataStr,pattern="YYYY-MM-DD HH:mm:ss"){
+  return moment(dataStr).format(pattern)
 
+})
 
 var vm = new Vue({
    el:'#app',
