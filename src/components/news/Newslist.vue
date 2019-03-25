@@ -24,10 +24,12 @@ export default{
  data(){
     return{
       newslist:[]
+
     };
 },
 created(){
 		this.getNewslist();
+		console.log(this.$route.query.id)
 },
  methods:{
        getNewslist(){

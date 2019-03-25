@@ -5,6 +5,9 @@ import SearchContainer from './components/tabbar/SearchContainer.vue'
 import ShopcarContainer from './components/tabbar/ShopcarContainer.vue'
 import Newslist from './components/news/Newslist.vue'
 import Newsinfo from './components/news/Newsinfo.vue'
+import Goodslist from './components/goods/goodslist.vue'
+import Goodsinfo from './components/goods/goodinfo.vue'
+
 
 var router = new VueRouter({
     routes:[
@@ -14,11 +17,14 @@ var router = new VueRouter({
       {path:'/shopcar',component:ShopcarContainer},
       {path:'/search',component:SearchContainer},
       {path:'/home/newslist',component:Newslist},
-      {path:'/home/newsinfo/',component:Newsinfo}
+      {path:'/home/newsinfo/:id',component:Newsinfo},
+      {path:'/home/goodlist',component:Goodslist},
+      {path:'/home/goodsinfo',component:Goodsinfo}
+      
+      
 
     ],
     linkActiveClass:'mui-active'
-}
-
+})
 
 export default router

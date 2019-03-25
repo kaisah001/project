@@ -1,8 +1,8 @@
 <template>
 	<div class="newsinfo-container">
-		<h3 class="title">新闻资讯</h3>
+		<h3 class="title">新闻资讯--{{id}}</h3>
 		<p class="subtitle">
-			<span>发表时间：</span>
+			<span>发表时间：{{}}</span>
 			<span>点击：</span>
 		</p>
 		<hr>
@@ -15,21 +15,32 @@
 export default{
  data(){
     return{
-      newsinfo:{}
+      newsinfo:{},
+      id:this.$route.params.id
     };
+  
 },
-methods:{
-	getNewsinfo(){
-		this.$http.get('api/getnew/'+this.id).then(result=>{
-			if(result.body.status === 0){
-              this.newsinfo = result.body.message[0];
-			}else{
-				Toast('获取新闻失败！')
-			}
-		})
-	}
-}
+created(){
+  this.getNewsinfo()
+},
 
+methods:{
+    getNewsinfo(){
+    this.$http.get('https://www.apiopen.top/satinGodApi?type=5&page=1').then(result=>{
+            var result = result.body.data
+           var b = result.findIndex((e)=>(e.soureid==this.id))
+            console.log(b)
+
+
+
+
+
+
+
+
+       })
+    }
+	}
 };
 </script>
 
